@@ -1,0 +1,18 @@
+Qu'est ce qu'il faut faire?
+Un générateur de carte virtuel 
+Avec quoi?
+C,html,css?
+Un affichage?
+SDL?HTML? 
+
+Pour créer la map on va surement devoir avoir besoin d'un algorithme qui va permettre de créer la map
+Doit-on aussi créer les hauteurs? (Montagnes,colines,etc)
+Des lacs?
+Une grande carte?moyenne?petite? (exemple:Jeux mondes ouverts,semi monde ouvert,et juste une map petite qui représente que une partie de l'univers?
+Des villesVillagesChateaux
+Routes qui permettra de connecter les villes
+Différents biomes? 
+Fantaisie?Realiste?ou autre?
+Des points d'intérêts? (Maison dans les bois)?
+
+

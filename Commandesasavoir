@@ -1,5 +1,7 @@
-git status
-git add /fichier
-git commit -m "Ajout d'un gitignore" 
-git push -u origin main
+git status                  //Permet d'avoir le status/Etat des fichiers sur votre ordinateur présent dans le fichier commun
+git add /fichier			//Permet d'ajouter un fichier pour qu'il soit envoyer sur github
+git commit -m "Ajout d'un gitignore" 	//Permet de "commit" tous les fichiers qui sont présent durant le git status et ajoute une "note"
+git push -u origin main		//Permet d'envoyer les fichiers sur github
 //Pas dans l'ordre
+
+//Pour git commit, ca ajoute une note a tous les fichiers modifier?
