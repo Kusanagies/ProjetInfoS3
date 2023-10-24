@@ -1,4 +1,5 @@
 git status
+git add /fichier
 git commit -m "Ajout d'un gitignore" 
 git push -u origin main
-git add /fichier
+//Pas dans l'ordre
