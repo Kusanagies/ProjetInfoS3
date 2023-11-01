@@ -5,3 +5,29 @@ git push -u origin main		//Permet d'envoyer les fichiers sur github
 //Pas dans l'ordre
 
 //Pour git commit, ca ajoute une note a tous les fichiers modifier?
+
+//Pour git commit, ca ajoute une note a tous les fichiers modifier?
+
+https://chat.openai.com/share/ca16b890-d704-4a68-9bf8-7452aa246b3f Pour la liste de tous les algos de tri et ce que qu'ils font.
+
+1. Tri à bulles (Bubble Sort)
+2. Tri par sélection (Selection Sort)
+3. Tri par insertion (Insertion Sort)
+4. Tri rapide (Quick Sort)
+5. Tri fusion (Merge Sort)
+6. Tri à coquilles (Shell Sort)
+7. Tri par comptage (Counting Sort)
+8. Tri par tas (Heap Sort)
+9. Tri par permutation (Permutation Sort)
+10. Tri par peigne (Comb Sort)
+11. Tri pigeonhole (Pigeonhole Sort)
+12. Tri par tas binaire (Binary Heap Sort)
+13. Tri de Gnome (Gnome Sort)
+14. Tri de Patience (Patience Sort)
+15. Tri naturel (Natural Sort)
+16. Tri de tim (Tim Sort)
+17. Tri de burin (Cocktail Shaker Sort)
+18. Tri de cycle (Cycle Sort)
+19. Tri pancake (Pancake Sort)
+20. Tri de bogo (Bogo Sort)
+
