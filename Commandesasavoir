@@ -2,6 +2,9 @@ git status                  //Permet d'avoir le status/Etat des fichiers sur vot
 git add /fichier			//Permet d'ajouter un fichier pour qu'il soit envoyer sur github
 git commit -m "Ajout d'un gitignore" 	//Permet de "commit" tous les fichiers qui sont présent durant le git status et ajoute une "note"
 git push -u origin main		//Permet d'envoyer les fichiers sur github
+
+WARNING: POUR POUVOIR ENVOYER DES TRUCS SUR GITHUB IL FAUT QU'IL N'Y AI PAS EU DE MODIFS ENTRE TEMPS, SI MODIF ALORS IL FAUT RECLONER LA PAGE GITHUB DANS UN AUTRE FICHIER DE COPIER COLLER CE QUE VOUS AVEZ MODIFIER
+
 //Pas dans l'ordre
 
 //Pour git commit, ca ajoute une note a tous les fichiers modifier?
