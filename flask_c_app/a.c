@@ -47,14 +47,14 @@ int main() {
         tmp = rand()%100;
         tab[i] = tmp;
     }
+    printf("Le tableau avant le tri :\n");
     for(i = 0;i < taille ;i++){
-        printf("Le tableau avant le tri :\n");
         printf("%d ",tab[i]);   
     }
     printf("\n");
     bubblesort(tab,taille);
+    printf("Le tableau après le tri :\n");
     for(i = 0;i < taille ;i++){
-        printf("Le tableau après le tri :\n");
         printf("%d ",tab[i]);
     }
     return 0;
