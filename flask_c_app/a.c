@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <time.h>
-#include <stdlib.c>
 
 
 void bubblesort(int * tab,int taille){
