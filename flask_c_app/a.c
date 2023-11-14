@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.c>
+
 
 void bubblesort(int * tab,int taille){
     int i,j,prout;
@@ -37,5 +40,23 @@ void bubblesortOpt(int *tab,int taille){
 
 int main() {
     printf("HELLO FROM SYLVAIN THE USER!\n");
+    srand((unsigned int)time(NULL));
+    int taille = 100;
+    int tab[100];
+    int i,tmp;
+    for(i = 0;i < taille;i++){
+        tmp = rand()%100;
+        tab[i] = tmp;
+    }
+    for(i = 0;i < taille ;i++){
+        printf("Le tableau avant le tri :\n");
+        printf("%d ",tab[i]);   
+    }
+    printf("\n");
+    bubblesort(tab,taille);
+    for(i = 0;i < taille ;i++){
+        printf("Le tableau après le tri :\n");
+        printf("%d ",tab[i]);
+    }
     return 0;
 }
