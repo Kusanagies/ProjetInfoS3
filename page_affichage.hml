@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ma Page HTML</title>
+</head>
+<body>
+    <h1>Mon Titre</h1>
+    <p>Ceci est un paragraphe.</p>
+    <script src="partie2_affichage.js"></script>
+    <script src="partie2_affichage.wasm"></script>
+
+</body>
+</html>
+

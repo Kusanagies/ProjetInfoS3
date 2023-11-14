@@ -3,9 +3,6 @@
     "name": "votre-projet",
     "version": "1.0.0",
     "description": "Votre description de projet",
-    "main": "partie2_affichage.js",
-    "scripts": {
-      "start": "node partie2_affichage.js"
-    }
+    "main": "partie2_affichage.js"
   }
   
