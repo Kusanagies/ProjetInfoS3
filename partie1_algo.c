@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdio.h>
 
 void bubbleSort(int arr[], int n) {
     int temp, swapped;
