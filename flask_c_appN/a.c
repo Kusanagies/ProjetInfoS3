@@ -1,61 +1,45 @@
 #include <stdio.h>
-#include <time.h>
 
+void swap(int *xp, int *yp) {
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
 
-void bubblesort(int * tab,int taille){
-    int i,j,prout;
-    for(i = 0;i < taille-1;i++){
-        for(j = 0;j < taille-i-1;j++){
-            if(tab[j] > tab[j+1]){
-                prout = tab[j];
-                tab[j] = tab[j+1];
-                tab[j+1] = prout;
-            }
-        }
+void selectionSort(int arr[], int n) {
+    int i, j, min_index;
+
+    for (i = 0; i < n-1; i++) {
+        // Trouver l'élément minimum dans le tableau non trié
+        min_index = i;
+        for (j = i+1; j < n; j++)
+            if (arr[j] < arr[min_index])
+                min_index = j;
+
+        // Échanger l'élément minimum trouvé avec le premier élément non trié
+        swap(&arr[min_index], &arr[i]);
     }
 }
 
-void bubblesortOpt(int *tab,int taille){
-    int lastswap;
-    int swapped;
-    int i,tmp;
-    int n = taille;
-    do{
-	swapped = 0;
-	lastswap = 0;
-        for(i = 1;i < n;i++){
-            if(tab[i-1] > tab[i]){
-                tmp = tab[i-1];
-                tab[i-1] = tab[i];
-                tab[i] = tmp;
-                lastswap = i;
-                swapped = 1;
-            }
-        }
-        n = lastswap;
-    } while(swapped != 0);
+void printArray(int arr[], int size) {
+    int i;
+    for (i=0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
 }
-
 
 int main() {
-    printf("HELLO FROM SYLVAIN THE USER!\n");
-    srand((unsigned int)time(NULL));
-    int taille = 100;
-    int tab[100];
-    int i,tmp;
-    for(i = 0;i < taille;i++){
-        tmp = rand()%100;
-        tab[i] = tmp;
-    }
-    printf("Le tableau avant le tri :\n");
-    for(i = 0;i < taille ;i++){
-        printf("%d ",tab[i]);   
-    }
-    printf("\n");
-    bubblesort(tab,taille);
-    printf("Le tableau après le tri :\n");
-    for(i = 0;i < taille ;i++){
-        printf("%d ",tab[i]);
-    }
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    printf("Tableau avant le tri : \n");
+    printArray(arr, n);
+
+    selectionSort(arr, n);
+
+    printf("Tableau après le tri par sélection : \n");
+    printArray(arr, n);
+
     return 0;
 }
+
