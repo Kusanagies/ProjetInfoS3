@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Selection</title>
+</head>
+<body>
+
+    <h1>Choose a Sorting Algorithm</h1>
+
+    <ul>
+        <li><a href="{{ url_for('sort', algorithm='bubble') }}">Bubble Sort</a></li>
+        <li><a href="{{ url_for('sort', algorithm='selection') }}">Selection Sort</a></li>
+        <li><a href="{{ url_for('sort', algorithm='insertion') }}">Insertion Sort</a></li>
+    </ul>
+
+</body>
+</html>
