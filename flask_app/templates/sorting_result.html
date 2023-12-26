@@ -6,12 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorting Result</title>
 </head>
+<style>
+    body {
+        /* Set background color */
+        background-color: #f4f4f4; /* Choose your preferred background color */
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Make sure the content takes the full height of the viewport */
+        margin: 0; /* Remove default margin to ensure full width */
+    }
+
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1, p {
+        color: #333; /* Choose your preferred text color */
+    }
+
+    /* Add more styles for other elements as needed */
+    .next-step-box {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #3498db; /* Choose your preferred box color */
+        color: white;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+</style>
 <body>
 
     <h1>Sorting Result</h1>
 
     <p>Algorithm used: {{ algorithm }}</p>
 
+    {% if algorithm == 'bubble' %}
+        <p>Tri à bulles (Bubble Sort) : Compare et échange les éléments adjacents s'ils sont dans le mauvais ordre, de manière répétée jusqu'à ce que la liste soit triée.</p>
+    {% elif algorithm == 'selection' %}
+        <p>Tri par sélection (Selection Sort) : Sélectionne le plus petit élément à chaque itération et l'échange avec l'élément à la position actuelle.</p>
+    {% elif algorithm == 'insertion' %}
+        <p>Tri par insertion (Insertion Sort) : Construit une séquence triée d'éléments un par un en les insérant à la bonne position.</p>
+    {% elif algorithm == 'merge' %}
+        <p>Tri par fusion (Merge Sort) : Divise récursivement la liste en deux moitiés, trie chaque moitié, puis fusionne les moitiés triées pour obtenir la liste finale triée.</p>
+    {% else %}
+        <p>No description available for this algorithm.</p>
+    {% endif %}
+    
     <!-- Display the sorting animation -->
     {{ video_html | safe }}
 

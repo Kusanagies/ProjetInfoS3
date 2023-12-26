@@ -5,16 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorting Algorithm Selection</title>
+    <style>
+        /* Add some basic styling to the buttons for better appearance */
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
     <h1>Choose a Sorting Algorithm</h1>
 
-    <ul>
-        <li><a href="{{ url_for('sort', algorithm='bubble') }}">Bubble Sort</a></li>
-        <li><a href="{{ url_for('sort', algorithm='selection') }}">Selection Sort</a></li>
-        <li><a href="{{ url_for('sort', algorithm='insertion') }}">Insertion Sort</a></li>
-    </ul>
+    <button onclick="window.location.href='{{ url_for('sort', algorithm='bubble') }}'">Bubble Sort</button>
+    <button onclick="window.location.href='{{ url_for('sort', algorithm='selection') }}'">Selection Sort</button>
+    <button onclick="window.location.href='{{ url_for('sort', algorithm='insertion') }}'">Insertion Sort</button>
+    <button onclick="window.location.href='{{ url_for('sort', algorithm='merge') }}'">Merge Sort</button>
 
 </body>
 </html>
