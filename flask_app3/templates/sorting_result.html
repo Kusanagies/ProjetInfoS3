@@ -7,49 +7,84 @@
     <title>Sorting Result</title>
 </head>
 <style>
-    body {
-        background-color: #f4f4f4;
-        font-family: 'Arial', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-    }
+body {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background-color: #e7e7e7;
+}
 
-    .container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+}
 
-    h1, p {
-        color: #333;
-    }
+button {
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #006b9d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
 
-    h1 {
-        margin-top: 20px; /* Adjust the top margin as needed */
-    }
+button:hover {
+    background-color: #45a049;
+}
 
-    .next-step-box {
-        cursor: pointer;
-        padding: 10px 20px;
-        background-color: #3498db;
-        color: white;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
+
+
+header {
+    background-color: #324862;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: column; /* Aligner les boutons verticalement */
+    align-items: center; /* Centrer les boutons horizontalement */
+    margin-top: 10px; /* Ajouter un espacement en haut des boutons */
+    padding: 15px 20px;
+    border-radius: 30px
+}
+footer {
+    background-color: #d9d9d9;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 45%;
+}
+
 </style>
 
 <body>
+    <header>
+        <img src="Downloads\logo.jpg" class="logo-site">
+        <div class="header-buttons">
+            <button class="home-btn" onclick="window.location.href='/'">
+                <img src="C:\Users\rnith\Documents\projet info 2024\logo_accueil.png" class="logo">
+                Accueil
+            </button>
+            <button class="algorithm-btn">Algorithmes</button>
+            <button class="download-btn">Téléchargement</button>
+        </div>
+    </header>
 
-    <h1>Sorting Result</h1>
+    <h1>RESULTAT</h1>
 
-    <p>Algorithm used: {{ algorithm }}</p>
-
+    <p>Algorithme utilisé: {{ algorithm }}</p>
+    <div class="container">
+        <div class="content">
     {% if algorithm == 'bubble' %}
         <p>Tri à bulles (Bubble Sort) : Compare et échange les éléments adjacents s'ils sont dans le mauvais ordre, de manière répétée jusqu'à ce que la liste soit triée.</p>
     {% elif algorithm == 'selection' %}
@@ -72,6 +107,10 @@
     <p>La taille du tableau est : {{array_size}} <p>
     <!-- Display the sorting animation -->
     {{ video_html | safe }}
+</div>
+<footer>
+    Auteurs : Sylvain HUANG - Estelle HU - Nithiya RAVITCHANDIRANE    2024
+</footer>
 
 </body>
 </html>
