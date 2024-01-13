@@ -19,7 +19,15 @@ body {
     justify-content: center;
     height: 90vh; /* 100% de la hauteur de la fenêtre */
 }
-
+.logo {
+    width: 20px; /* Adjust the width as needed */
+    margin-right: 5px; /* Espacement entre le logo et le texte du bouton */
+}
+.logo-site {
+    width: 40px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Espacement entre le logo et le texte du bouton */
+}
 h1 {
     color: #333;
     margin: 50px;
@@ -29,7 +37,8 @@ h1 {
 p1{
     text-decoration: underline;
     text-align: center;
-    margin: 50px;
+    margin: 150px;
+    font-size: 20px;
 }
 p {
     text-align: justify;
@@ -58,7 +67,6 @@ header {
     background-color: rgb(0, 13, 87);
     color: #ffffff;
     padding: 20px;
-    margin: 0;
 }
 header:hover{
     background-color: rgb(125, 35, 198);
@@ -85,7 +93,7 @@ header:hover{
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    margin: 0 170px;
+    margin: 0 168px;
 }
 
 .home-btn:hover,
@@ -94,7 +102,7 @@ header:hover{
     background: linear-gradient(#00267e, #01045f); /* Couleur de fond au survol */
 }
 footer {
-    background-color: #d9d9d9;
+    background-color: #f1e5e5;
     padding: 10px;
     text-align: center;
     position: fixed;
@@ -117,7 +125,7 @@ footer {
     width: 400%;
     flex: 1; /* Ajustement pour que le conteneur s'étire sur toute la hauteur disponible */
     background-color: #d6d6d6; /* Couleur de fond */
-    box-shadow: 0 0 10px rgba(250, 255, 105, 0.5); /* Ombre légère */
+    box-shadow: 0 0 10px rgba(181, 182, 168, 0.5); /* Ombre légère */
 }
 
 .content {
@@ -128,10 +136,9 @@ footer {
 <body>
     <div id="content-container">
     <header>
-        <img src="Downloads\logo.jpg" class="logo-site">
+        <img src="{{ url_for('static', filename='logo vrai.jpg') }}" class="logo-site">
         <div class="header-buttons">
             <button class="home-btn" onclick="window.location.href='/'">
-                <img src="C:\Users\rnith\Documents\projet info 2024\logo_accueil.png" class="logo">
                 Accueil
             </button>
             <button class="algorithm-btn">Algorithmes</button>

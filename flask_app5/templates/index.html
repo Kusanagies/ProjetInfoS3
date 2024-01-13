@@ -102,7 +102,7 @@ footer {
 }
 
 .logo-site {
-    width: 25px; /* Adjust the width as needed */
+    width: 40px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     margin-right: 5px; /* Espacement entre le logo et le texte du bouton */
 }
@@ -157,10 +157,8 @@ input{
 <body>
     <header>
         <img src="{{ url_for('static', filename='logo vrai.jpg') }}" class="logo-site">
-
         <div class="header-buttons">
-            <button class="home-btn" onclick="window.location.href='/';">
-                <img src="{{ url_for('static', filename='accueil maison.jpg') }}" class="logo">
+            <button class="home-btn" onclick="window.location.href='/'">
                 Accueil
             </button>
             <button class="algorithm-btn">Algorithmes</button>
