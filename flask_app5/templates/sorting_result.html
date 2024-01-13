@@ -108,22 +108,36 @@ footer {
 .grap{
     text-align: center;
 }
+.container {
+    margin: auto;
+    border: 3px solid #5f5f5f; /* Style du cadre */
+    padding: 90px;
+    box-sizing: border-box;
+    max-width: 1100px; /* Largeur maximale du cadre */
+    width: 400%;
+    flex: 1; /* Ajustement pour que le conteneur s'étire sur toute la hauteur disponible */
+    background-color: #d6d6d6; /* Couleur de fond */
+    box-shadow: 0 0 10px rgba(250, 255, 105, 0.5); /* Ombre légère */
+}
+
+.content {
+    text-align: center;
+}
 </style>
 
 <body>
     <div id="content-container">
-        <header>
-            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-site">
-    
-            <div class="header-buttons">
-                <button class="home-btn" onclick="window.location.href='/';">
-                    <img src="{{ url_for('static', filename='Accueil.png') }}" class="logo">
-                    Accueil
-                </button>
-                <button class="algorithm-btn">Algorithmes</button>
-                <button class="download-btn">Téléchargement</button>
-            </div>
-        </header>
+    <header>
+        <img src="Downloads\logo.jpg" class="logo-site">
+        <div class="header-buttons">
+            <button class="home-btn" onclick="window.location.href='/'">
+                <img src="C:\Users\rnith\Documents\projet info 2024\logo_accueil.png" class="logo">
+                Accueil
+            </button>
+            <button class="algorithm-btn">Algorithmes</button>
+            <button class="download-btn">Téléchargement</button>
+        </div>
+    </header>
     <br><br><br>
     <h1>RESULTAT</h1><br>
 
