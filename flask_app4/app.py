@@ -55,7 +55,7 @@ def compile_and_run_c_Naturalsort(array_size):
 def sorting_animation(data):
     plt.switch_backend('agg')  # Switch to non-interactive mode
     fig, ax = plt.subplots()
-    bars = ax.bar(range(len(data[0])), data[0], color='blue')
+    bars = ax.bar(range(len(data[0])), data[0], color='yellow')
 
     def update(frame):
         for i, (old_height, new_height) in enumerate(zip(bars, frame)):
@@ -64,7 +64,7 @@ def sorting_animation(data):
                 old_height.set_color('red')
             else:
                 # Reset color to skyblue for bars that haven't changed
-                old_height.set_color('skyblue')
+                old_height.set_color('pink')
             old_height.set_height(new_height)
         return bars
 
@@ -74,6 +74,7 @@ def sorting_animation(data):
 
 @app.route('/')
 def home():
+    center_graph = True 
     return render_template('index.html')
 
 #Modification de ca pour pouvoir changer la taille selon la demande de l'utilisateur

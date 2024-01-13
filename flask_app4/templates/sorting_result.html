@@ -1,55 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Result</title>
+    <title>résultat du tri</title>
 </head>
 <style>
-    body {
-        background-color: #f4f4f4;
-        font-family: 'Arial', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-    }
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background-color: #e7e7e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; /* 100% de la hauteur de la fenêtre */
+}
 
-    .container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
+h1 {
+    color: #333;
+    margin: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+p1{
+    text-decoration: underline;
+    text-align: center;
+    margin: 50px;
+}
+p {
+    text-align: justify;
+    margin: 20px; /* Ajoute une marge de 20 pixels autour du paragraphe */
+}
+button {
+    padding: 15px 20px;
+    margin: 10px;
+    font-size: 19px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    /*margin: 0 190px; */
+}
 
-    h1, p {
-        color: #333;
-    }
+button:hover {
+    background-color: #f97fff;
+}
 
-    h1 {
-        margin-top: 20px; /* Adjust the top margin as needed */
-    }
 
-    .next-step-box {
-        cursor: pointer;
-        padding: 10px 20px;
-        background-color: #3498db;
-        color: white;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
+
+header {
+    background-color: rgb(0, 13, 87);
+    color: #ffffff;
+    padding: 20px;
+    margin: 0;
+}
+header:hover{
+    background-color: rgb(125, 35, 198);
+}
+
+.header-btn {
+    display: flex;
+    flex-direction: lign; /* Aligner les boutons verticalement */
+    align-items: center; /* Centrer les boutons horizontalement */
+    margin-top: 10px; /* Ajouter un espacement en haut des boutons */
+    padding: 15px 20px;
+    border-radius: 50px;
+    background-color: #ffffff;
+}
+.home-btn,
+.algorithm-btn,
+.download-btn {
+    padding: 15px 20px;
+    background: linear-gradient(#4d359c, #7741a0); /* Couleur de fond */
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 170px;
+}
+
+.home-btn:hover,
+.algorithm-btn:hover,
+.download-btn:hover {
+    background: linear-gradient(#00267e, #01045f); /* Couleur de fond au survol */
+}
+footer {
+    background-color: #d9d9d9;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 45%;
+}
+#content-container {
+            overflow: auto; /* ou overflow: scroll; */
+            max-height: 100vh; /* Pour limiter la hauteur au maximum de la fenêtre */
+        }
+.grap{
+    text-align: center;
+}
 </style>
 
 <body>
+    <div id="content-container">
+    <header>
+        <img src="Downloads\logo.jpg" class="logo-site">
+        <div class="header-buttons">
+            <button class="home-btn" onclick="window.location.href='/'">
+                <img src="C:\Users\rnith\Documents\projet info 2024\logo_accueil.png" class="logo">
+                Accueil
+            </button>
+            <button class="algorithm-btn">Algorithmes</button>
+            <button class="download-btn">Téléchargement</button>
+        </div>
+    </header>
+    <br><br><br>
+    <h1>RESULTAT</h1><br>
 
-    <h1>Sorting Result</h1>
-
-    <p>Algorithm used: {{ algorithm }}</p>
-
+    <p1>Algorithme utilisé: {{ algorithm }}</p1><br><br><br>
+    <div class="container">
+        <div class="content">
     {% if algorithm == 'bubble' %}
         <p>Tri à bulles (Bubble Sort) : Compare et échange les éléments adjacents s'ils sont dans le mauvais ordre, de manière répétée jusqu'à ce que la liste soit triée.</p>
     {% elif algorithm == 'selection' %}
@@ -71,7 +150,15 @@
     <p>Le nombre de ligne dans le fichier est de (aussi le nombre de swap?): {{ line_count }}</p>
     <p>La taille du tableau est : {{array_size}} <p>
     <!-- Display the sorting animation -->
-    {{ video_html | safe }}
-
+    <div class="grap">
+        {{ video_html | safe }}
+        <br><br><br><br><br><br><br><br>
+    </div>
+    
+</div>
+<footer>
+    Auteurs : Sylvain HUANG - Estelle HU - Nithiya RAVITCHANDIRANE    2024
+</footer>
+</div>
 </body>
 </html>
