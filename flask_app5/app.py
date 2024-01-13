@@ -51,7 +51,11 @@ def compile_and_run_c_Bogosort(array_size):
 def compile_and_run_c_Naturalsort(array_size):
     subprocess.run(['gcc', 'Naturalsort.c', '-o', 'output_file'])
     subprocess.run(['./output_file', str(array_size)])
-    
+
+def compile_and_run_c_trirapide(array_size):
+    subprocess.run(['gcc', 'trirapide.c', '-o', 'output_file'])
+    subprocess.run(['./output_file', str(array_size)])  
+
 def sorting_animation(data):
     plt.switch_backend('agg')  # Switch to non-interactive mode
     fig, ax = plt.subplots()

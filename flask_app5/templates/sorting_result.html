@@ -107,7 +107,7 @@ footer {
     text-align: center;
     position: fixed;
     bottom: 0;
-    width: 45%;
+    width: 60%;
 }
 #content-container {
             overflow: auto; /* ou overflow: scroll; */
@@ -152,19 +152,28 @@ footer {
     <div class="container">
         <div class="content">
     {% if algorithm == 'bubble' %}
-        <p>Tri à bulles (Bubble Sort) : Compare et échange les éléments adjacents s'ils sont dans le mauvais ordre, de manière répétée jusqu'à ce que la liste soit triée.</p>
+        <p>Tri à bulles (Bubble Sort) : Compare et échange les éléments adjacents s'ils sont dans le mauvais ordre, 
+            de manière répétée 
+            jusqu'à ce que la liste soit triée.</p>
     {% elif algorithm == 'selection' %}
-        <p>Tri par sélection (Selection Sort) : Sélectionne le plus petit élément à chaque itération et l'échange avec l'élément à la position actuelle.</p>
+        <p>Tri par sélection (Selection Sort) : Sélectionne le plus petit élément à chaque itération et l'échange avec
+             l'élément à la position actuelle.</p>
     {% elif algorithm == 'insertion' %}
         <p>Tri par insertion (Insertion Sort) : Construit une séquence triée d'éléments un par un en les insérant à la bonne position.</p>
     <!-- Merge sort n'existe pas dans les fichier-->
     {% elif algorithm == 'gnome' %}
-        <p>Tri gnome (Gnome Sort) : Un algorithme de tri basé sur le principe d'une personne triant des pots de fleurs. Il effectue des échanges locaux pour déplacer les éléments dans la bonne position.</p>
+        <p>Tri gnome (Gnome Sort) : Un algorithme de tri basé sur le principe d'une personne triant des pots de fleurs. 
+            Il effectue des échanges locaux pour
+             déplacer les éléments dans la bonne position.</p>
     {% elif algorithm == 'bogo' %}
-        <p>Tri aléatoire (Bogo Sort) : Pour chaque itération du tri, il va aléatoirement repositionner chaque valeur dans le tableau jusqu'à que le tableau soit trié</p>
+        <p>Tri aléatoire (Bogo Sort) : Pour chaque itération du tri, il va aléatoirement repositionner chaque valeur 
+            dans le tableau jusqu'à que le tableau soit trié</p>
     {% elif algorithm == 'natural' %}
-        <p>Tri naturel (Natural Sort) : Le tri naturel (natural sort) est un algorithme de tri conçu pour trier des chaînes alphanumériques d'une manière qui reflète l'ordre naturel que l'on pourrait attendre en tant qu'humain plutôt que dans l'ordre lexicographique traditionnel utilisé par les ordinateurs.</p>   
+        <p>Tri naturel (Natural Sort) : Le tri naturel (natural sort) est un algorithme de tri conçu pour trier des chaînes alphanumériques 
+            d'une manière qui reflète l'ordre naturel 
+            que l'on pourrait attendre en tant qu'humain plutôt que dans l'ordre lexicographique traditionnel utilisé par les ordinateurs.</p>   
         <br>
+        {% elif algorithm == 'trirapide' %}
         <p style="color: red;"> Problème avec ce tri algorithmique (les chiffres (une unité ex: 0,1,2,3 etc) ne sont pas bien trié)</p>
     {% else %}
         <p>No description available for this algorithm.</p>
