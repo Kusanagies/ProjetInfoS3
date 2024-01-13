@@ -112,17 +112,18 @@ footer {
 
 <body>
     <div id="content-container">
-    <header>
-        <img src="Downloads\logo.jpg" class="logo-site">
-        <div class="header-buttons">
-            <button class="home-btn" onclick="window.location.href='/'">
-                <img src="C:\Users\rnith\Documents\projet info 2024\logo_accueil.png" class="logo">
-                Accueil
-            </button>
-            <button class="algorithm-btn">Algorithmes</button>
-            <button class="download-btn">Téléchargement</button>
-        </div>
-    </header>
+        <header>
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo-site">
+    
+            <div class="header-buttons">
+                <button class="home-btn" onclick="window.location.href='/';">
+                    <img src="{{ url_for('static', filename='Accueil.png') }}" class="logo">
+                    Accueil
+                </button>
+                <button class="algorithm-btn">Algorithmes</button>
+                <button class="download-btn">Téléchargement</button>
+            </div>
+        </header>
     <br><br><br>
     <h1>RESULTAT</h1><br>
 
