@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Selection</title>
+
+
+    <style> 
+body {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background-color: #e7e7e7;
+}
+
+.container {
+    margin: auto;
+    border: 3px solid #5f5f5f; /* Style du cadre */
+    padding: 90px;
+    box-sizing: border-box;
+    max-width: 1100px; /* Largeur maximale du cadre */
+    width: 400%;
+    flex: 1; /* Ajustement pour que le conteneur s'étire sur toute la hauteur disponible */
+    background-color: #d6d6d6; /* Couleur de fond */
+    box-shadow: 0 0 10px rgba(250, 255, 105, 0.5); /* Ombre légère */
+}
+
+.content {
+    text-align: center;
+}
+
+h1 {
+    color: #000000;
+}
+
+button {
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background: linear-gradient(#afe4fe, #007BFF);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(#5bff03, #186f0a);
+}
+
+
+
+header {
+    background: linear-gradient(#000138, #1d0247);
+    color: #ffffff;
+    padding: 10px;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: column; /* Aligner les boutons verticalement */
+    align-items: center; /* Centrer les boutons horizontalement */
+    margin-top: 10px; /* Ajouter un espacement en haut des boutons */
+    padding: 15px 20px;
+    border-radius: 30px
+}
+
+.home-btn,
+.algorithm-btn,
+.download-btn {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 15px 20px;
+    background: linear-gradient(#2379e2, #4492ff); /* Couleur de fond */
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.home-btn:hover,
+.algorithm-btn:hover,
+.download-btn:hover {
+    background: linear-gradient(#be0000, #d22d04); /* Couleur de fond au survol */
+}
+.container.closed {
+    display: none; /* Masquer le cadre lorsque la classe .closed est présente */
+}
+
+footer {
+    background-color: #d9d9d9;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 60%;
+}
+
+.logo-site {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Espacement entre le logo et le texte du bouton */
+}
+
+label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+            color: #000000;
+        }
+select {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 16px;
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 6px;
+            width: 250px;
+            margin-bottom: 20px;
+            background-color: #daffc1;
+            color: #fb0000;
+            appearance: none;
+        }
+
+        select:hover{
+            border-color: rgb(204, 22, 162);
+            background-color: rgb(244, 248, 255);
+        }
+        select:focus {
+            border-color: #deff0b;
+        }
+
+        option {
+            font-family: fantasy;
+            font-size: 14px;
+        }
+        option:hover{
+            background-color: #007BFF;
+        }
+input{
+    padding: 10px;
+    background-color: #000000;
+    color: rgb(2, 165, 13);
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo vrai.jpg') }}" class="logo-site"> <!-- mettre un logo pour le site -->
+        <div class="header-buttons">
+            <button class="home-btn" onclick="window.location.href='/'"> <!-- quand on clique sur le bouton accueil, ça renvoie à cette page -->
+                Accueil
+            </button>
+            <button class="algorithm-btn">Algorithmes</button>
+            <button class="download-btn">Téléchargement</button>
+        </div>
+    </header>
+    
+    <div class="container"> <!-- création d'un cadre -->
+        <div class="content">
+    <h1>CHOISI UN ALGORITHME DE TRI ET LA TAILLE DU TABLEAU</h1>
+    <br>
+    <p>Salut à toi! Si tu es sur ce site c'est pour essayer de comprendre les tris algorithmiques et leurs fonctionnements, je te laisse choisir le tri que tu veux :</p>
+    <br>
+
+    <form action="{{ url_for('sort', algorithm='selected_algorithm') }}" method="post"> <!-- créer le formulaire avec la liste déroulante --> 
+        <label for="sorting_algorithm">Selectionne un algorithme:</label>
+        <select id="sorting_algorithm" name="sorting_algorithm">
+            <option value="bubble">Bubble Sort</option>  <!-- les différends options -->
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="gnome">Gnome Sort</option>
+            <option value="bogo">Bogo Sort</option>
+            <option value="natural">Natural Sort</option>
+            <option value="natural">trirapide Sort</option>
+        </select>
+    
+        <br>
+    
+        <label for="array_size">entre une taille (entier min 2):</label>
+        <input type="number" id="array_size" name="array_size" required min="2" title="Please enter only numbers">
+    
+        <br>
+    
+        <button type="submit" class="submit-btn">Run Algorithme</button>
+    </form>
+        </div>
+    <footer> <!-- Pied de page -->
+        Auteurs : Sylvain HUANG - Estelle HU - Nithiya RAVITCHANDIRANE    2024
+    </footer>
+</body>
+</html>
