@@ -256,7 +256,8 @@ def sort(algorithm):
 
         # Close the figure to release resources
         plt.close(animation._fig)
-
+        #Pour enlever le fichier output.csv pour eviter les problemes avec github, enelever cette ligne de commande pour pouvoir accéder au fichier
+        subprocess.run(['rm','output.csv'])
         return render_template('sorting_result.html', algorithm=algorithm, video_html=video_html, line_count=line_count,array_size=array_size,execution_time=execution_time)
     except Exception as e:
         return f"Error: {str(e)}"
