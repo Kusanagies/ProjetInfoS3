@@ -21,14 +21,9 @@ def count_lines(file_path):
         print(f"Une erreur s'est produite : {e}")
         return -1  # Retourne -1 pour indiquer une erreur
 
-# Exemple d'utilisation
-file_path = '/root/projects/flask_app/output.csv'
-line_count = count_lines(file_path)
-if line_count != -1:
-    print(f"Le fichier '{file_path}' contient {line_count} lignes.")
     
 def compile_and_run_c_bubblesort(array_size):
-    start_time = time.time
+    start_time = time.time()
     try: 
         # Use subprocess to compile the C file
         compile_result = subprocess.run(['gcc', 'bubblesort.c', '-o', 'output_file'])
@@ -38,6 +33,7 @@ def compile_and_run_c_bubblesort(array_size):
             execution_time = time.time() - start_time
             if run_result.returncode == 0:
                 print(f"Bubble Compilation and execution successful. Time taken:{execution_time:.4f}seconds\n{run_result.stdout}")
+                return execution_time
             else: 
                 print(f"Bubble Execution error: {run_result.stderr}")
         else: 
@@ -50,7 +46,7 @@ def compile_and_run_c_bubblesort(array_size):
     
 
 def compile_and_run_c_Insertionsort(array_size):
-    start_time = time.time
+    start_time = time.time()
     try: 
         # Use subprocess to compile the C file
         compile_result = subprocess.run(['gcc', 'Insertionsort.c', '-o', 'output_file'])
@@ -60,6 +56,7 @@ def compile_and_run_c_Insertionsort(array_size):
             execution_time = time.time() - start_time
             if run_result.returncode == 0:
                 print(f"Ins Compilation and execution successful. Time taken:{execution_time:.4f}seconds\n{run_result.stdout}")
+                return execution_time
             else: 
                 print(f"Ins Execution error: {run_result.stderr}")
         else: 
@@ -70,7 +67,7 @@ def compile_and_run_c_Insertionsort(array_size):
         subprocess.run(['rm','output_file'])
 
 def compile_and_run_c_Selectionsort(array_size):
-    start_time = time.time
+    start_time = time.time()
     try: 
         # Use subprocess to compile the C file
         compile_result = subprocess.run(['gcc', 'selectionsort.c', '-o', 'output_file'])
@@ -80,6 +77,7 @@ def compile_and_run_c_Selectionsort(array_size):
             execution_time = time.time() - start_time
             if run_result.returncode == 0:
                 print(f"Select Compilation and execution successful. Time taken:{execution_time:.4f}seconds\n{run_result.stdout}")
+                return execution_time
             else: 
                 print(f"Select Execution error: {run_result.stderr}")
         else: 
@@ -90,7 +88,7 @@ def compile_and_run_c_Selectionsort(array_size):
         subprocess.run(['rm','output_file'])
 
 def compile_and_run_c_Gnomesort(array_size):
-    start_time = time.time
+    start_time = time.time()
     try: 
         # Use subprocess to compile the C file
         compile_result = subprocess.run(['gcc', 'Gnomesort.c', '-o', 'output_file'])
@@ -100,6 +98,7 @@ def compile_and_run_c_Gnomesort(array_size):
             execution_time = time.time() - start_time
             if run_result.returncode == 0:
                 print(f"Gnome Compilation and execution successful. Time taken:{execution_time:.4f}seconds\n{run_result.stdout}")
+                return execution_time
             else: 
                 print(f"Gnome Execution error: {run_result.stderr}")
         else: 
@@ -110,7 +109,7 @@ def compile_and_run_c_Gnomesort(array_size):
         subprocess.run(['rm','output_file'])
 
 def compile_and_run_c_Bogosort(array_size):
-    start_time = time.time
+    start_time = time.time()
     try: 
         # Use subprocess to compile the C file
         compile_result = subprocess.run(['gcc', 'bogosort.c', '-o', 'output_file'])
@@ -120,6 +119,7 @@ def compile_and_run_c_Bogosort(array_size):
             execution_time = time.time() - start_time
             if run_result.returncode == 0:
                 print(f"Bogo Compilation and execution successful. Time taken:{execution_time:.4f}seconds\n{run_result.stdout}")
+                return execution_time
             else: 
                 print(f"Bogo Execution error: {run_result.stderr}")
         else: 
@@ -130,7 +130,7 @@ def compile_and_run_c_Bogosort(array_size):
         subprocess.run(['rm','output_file'])
 
 def compile_and_run_c_Naturalsort(array_size):
-    start_time = time.time
+    start_time = time.time()
     try: 
         # Use subprocess to compile the C file
         compile_result = subprocess.run(['gcc', 'Naturalsort.c', '-o', 'output_file'])
@@ -140,6 +140,7 @@ def compile_and_run_c_Naturalsort(array_size):
             execution_time = time.time() - start_time
             if run_result.returncode == 0:
                 print(f"Natural Compilation and execution successful. Time taken:{execution_time:.4f}seconds\n{run_result.stdout}")
+                return execution_time
             else: 
                 print(f"Natural Execution error: {run_result.stderr}")
         else: 
@@ -150,7 +151,7 @@ def compile_and_run_c_Naturalsort(array_size):
         subprocess.run(['rm','output_file'])
 
 def compile_and_run_c_trirapide(array_size):
-    start_time = time.time
+    start_time = time.time()
     try: 
         # Use subprocess to compile the C file
         compile_result = subprocess.run(['gcc', 'trirapide.c', '-o', 'output_file'])
@@ -160,6 +161,7 @@ def compile_and_run_c_trirapide(array_size):
             execution_time = time.time() - start_time
             if run_result.returncode == 0:
                 print(f"Rapide Compilation and execution successful. Time taken:{execution_time:.4f}seconds\n{run_result.stdout}")
+                return execution_time
             else: 
                 print(f"Rapide Execution error: {run_result.stderr}")
         else: 
@@ -214,26 +216,27 @@ def sort(algorithm):
 
         # Choose the sorting algorithm based on the user's selection
         if algorithm == 'bubble':
-            compile_and_run_c_bubblesort(array_size)
+            execution_time = compile_and_run_c_bubblesort(array_size)
         elif algorithm == 'selection':
-            compile_and_run_c_Selectionsort(array_size)
+            execution_time = compile_and_run_c_Selectionsort(array_size)
         elif algorithm == 'insertion':
-            compile_and_run_c_Insertionsort(array_size)
+            execution_time = compile_and_run_c_Insertionsort(array_size)
         elif algorithm == 'gnome':
-            compile_and_run_c_Gnomesort(array_size)
+            execution_time = compile_and_run_c_Gnomesort(array_size)
         elif algorithm == 'bogo':
-            compile_and_run_c_Bogosort(array_size)
+            execution_time = compile_and_run_c_Bogosort(array_size)
         elif algorithm == 'natural':
-            compile_and_run_c_Naturalsort(array_size)
+            execution_time = compile_and_run_c_Naturalsort(array_size)
         elif algorithm == 'trirapide':
-            compile_and_run_c_trirapide(array_size)
+            execution_time = compile_and_run_c_trirapide(array_size)
         else:
             # Handle invalid algorithm selection
             return "Invalid algorithm selected"
 
+    file_path = '/root/ProjetInfoS3/flask_app5/output.csv'
 
     # Read data from the CSV file
-    with open('output.csv', 'r') as file:
+    with open('/root/ProjetInfoS3/flask_app5/output.csv', 'r') as file:
         reader = csv.reader(file, delimiter=';')
         # Assuming each row in the CSV file represents a snapshot of the arrayjeu 
         data = [
@@ -245,14 +248,17 @@ def sort(algorithm):
     try:
         # Create sorting animation using the sorted data
         animation = sorting_animation(data)
-
+        line_count = count_lines(file_path)
+        if line_count != -1:
+            print(f"Le fichier '{file_path}' contient {line_count} lignes.")   
         # Convert the animation to HTML5 video
         video_html = animation.to_jshtml()
 
         # Close the figure to release resources
         plt.close(animation._fig)
-
-        return render_template('sorting_result.html', algorithm=algorithm, video_html=video_html, line_count=line_count,array_size=array_size)
+        #Pour enlever le fichier output.csv pour eviter les problemes avec github, enelever cette ligne de commande pour pouvoir accéder au fichier
+        subprocess.run(['rm','output.csv'])
+        return render_template('sorting_result.html', algorithm=algorithm, video_html=video_html, line_count=line_count,array_size=array_size,execution_time=execution_time)
     except Exception as e:
         return f"Error: {str(e)}"
 
