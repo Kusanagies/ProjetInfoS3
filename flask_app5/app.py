@@ -233,10 +233,10 @@ def sort(algorithm):
             # Handle invalid algorithm selection
             return "Invalid algorithm selected"
 
-    file_path = '/root/ProjetInfoS3/flask_app5/output.csv'
+    file_path = 'output.csv'
 
     # Read data from the CSV file
-    with open('/root/ProjetInfoS3/flask_app5/output.csv', 'r') as file:
+    with open('output.csv', 'r') as file:
         reader = csv.reader(file, delimiter=';')
         # Assuming each row in the CSV file represents a snapshot of the arrayjeu 
         data = [
