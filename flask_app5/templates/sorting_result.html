@@ -8,7 +8,7 @@
 </head>
 <style>
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Georgia',sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -35,7 +35,7 @@ h1 {
     text-align: center;
 }
 p1{
-    text-decoration: underline;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     text-align: center;
     margin: 150px;
     font-size: 20px;
@@ -43,13 +43,13 @@ p1{
 p {
     text-align: justify;
     margin: 20px; /* Ajoute une marge de 20 pixels autour du paragraphe */
-}
+} 
 button {
     padding: 15px 20px;
     margin: 10px;
     font-size: 19px;
     cursor: pointer;
-    background-color: #000000;
+    background-color: #5d1f7a;
     color: white;
     border: none;
     border-radius: 10px;
@@ -64,19 +64,18 @@ button:hover {
 
 
 header {
-    background-color: rgb(0, 13, 87);
-    color: #ffffff;
+    background-color: #1c2838;
     padding: 20px;
 }
 header:hover{
-    background-color: rgb(125, 35, 198);
+    background-color: #4c2570;
 }
 
 .header-btn {
     display: flex;
-    flex-direction: lign; /* Aligner les boutons verticalement */
+    flex-direction: lign; 
     align-items: center; /* Centrer les boutons horizontalement */
-    margin-top: 10px; /* Ajouter un espacement en haut des boutons */
+    margin-top: 5px; /* Ajouter un espacement en haut des boutons */
     padding: 15px 20px;
     border-radius: 50px;
     background-color: #ffffff;
@@ -93,7 +92,8 @@ header:hover{
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    margin: 0 168px;
+    margin: 20px;
+    border-radius: 10px; 
 }
 
 .home-btn:hover,
@@ -108,6 +108,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 60%;
+    border-radius: 10px; 
 }
 #content-container {
             overflow: auto; /* ou overflow: scroll; */
@@ -131,6 +132,13 @@ footer {
 .content {
     text-align: center;
 }
+
+.stylee {
+    font-size: 23px;
+    font-family: 'Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif', sans-serif;
+    color: #5a3399;
+}
+
 </style>
 
 <body>
@@ -142,13 +150,15 @@ footer {
                 Accueil
             </button>
             <button class="algorithm-btn">Algorithmes</button>
-            <button class="download-btn">Téléchargement</button>
-        </div>
+            <!--<button class="download-btn">Téléchargement</button>-->
+            <a href="{{ url_for('download_page') }}" class="download-btn" download="sorting_result.html">
+                Téléchargement
+            </a>
     </header>
     <br><br><br>
     <h1>RESULTAT</h1><br>
 
-    <p1>Algorithme utilisé: {{ algorithm }}</p1><br><br><br>
+    <p1>Algorithme utilisé: <span class="stylee">{{ algorithm }}</span></p1><br><br><br>
     <div class="container">
         <div class="content">
     {% if algorithm == 'bubble' %}
@@ -178,9 +188,9 @@ footer {
     {% else %}
         <p>No description available for this algorithm.</p>
     {% endif %}
-    <p>Le nombre de ligne dans le fichier est de (aussi le nombre de swap?): {{ line_count }}</p>
-    <p>La taille du tableau est : {{array_size}} <p>
-    <p>Le temps d'éxécution est de : {{execution_time}} secondes <p>
+    <p>Le nombre de ligne dans le fichier est de (aussi le nombre de swap?): <span class="stylee">{{ line_count }}</span></p>
+    <p>La taille du tableau est : <span class="stylee">{{ array_size }}</span> <p>
+    <p>Le temps d'éxécution est de : <span class="stylee">{{execution_time}} </span>secondes <p>
     <!-- Display the sorting animation -->
     <div class="grap">
         {{ video_html | safe }}
