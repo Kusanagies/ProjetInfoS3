@@ -112,6 +112,8 @@ def sort(algorithm):
             compile_and_run_c_Bogosort(array_size)
         elif algorithm == 'natural':
             compile_and_run_c_Naturalsort(array_size)
+        elif algorithm == 'trirapide':
+            compile_and_run_c_trirapide(array_size)
         else:
             # Handle invalid algorithm selection
             return "Invalid algorithm selected"
