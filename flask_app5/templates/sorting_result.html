@@ -43,13 +43,13 @@ p1{
 p {
     text-align: justify;
     margin: 20px; /* Ajoute une marge de 20 pixels autour du paragraphe */
-}
+} 
 button {
     padding: 15px 20px;
     margin: 10px;
     font-size: 19px;
     cursor: pointer;
-    background-color: #6b009c;
+    background-color: #5d1f7a;
     color: white;
     border: none;
     border-radius: 10px;
@@ -93,6 +93,7 @@ header:hover{
     font-size: 16px;
     cursor: pointer;
     margin: 20px;
+    border-radius: 10px; 
 }
 
 .home-btn:hover,
@@ -107,6 +108,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 60%;
+    border-radius: 10px; 
 }
 #content-container {
             overflow: auto; /* ou overflow: scroll; */
@@ -148,8 +150,10 @@ footer {
                 Accueil
             </button>
             <button class="algorithm-btn">Algorithmes</button>
-            <button class="download-btn">Téléchargement</button>
-        </div>
+            <!--<button class="download-btn">Téléchargement</button>-->
+            <a href="{{ url_for('download_page') }}" class="download-btn" download="sorting_result.html">
+                Téléchargement
+            </a>
     </header>
     <br><br><br>
     <h1>RESULTAT</h1><br>

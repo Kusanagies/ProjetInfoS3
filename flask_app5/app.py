@@ -1,9 +1,8 @@
-from flask import Flask, render_template
-import matplotlib.pyplot as plt
+from flask import Flask, render_template, send_file, request
 from matplotlib.animation import FuncAnimation
+import matplotlib.pyplot as plt
 import csv
 import subprocess
-from flask import Flask, render_template, request
 import time
 
 app = Flask(__name__)
@@ -190,6 +189,19 @@ def sorting_animation(data):
     animation = FuncAnimation(fig, update, frames=data, interval=500, repeat=False)
 
     return animation
+
+@app.route('/download_page')
+def download_page():
+    # Récupérer le contenu HTML de la page
+    html_content = render_template('sorting_result.html')
+
+    # Écrire le contenu dans un fichier temporaire
+    with open('sorting_result.html', 'w', encoding='utf-8') as file:
+        file.write(html_content)
+
+    # Retourner le fichier à télécharger
+    return send_file('sorting_result.html', as_attachment=True, download_name='sorting_result.html')
+
 
 @app.route('/')
 def home():
