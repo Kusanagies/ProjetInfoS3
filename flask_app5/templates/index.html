@@ -153,8 +153,31 @@ input{
     color: rgb(29, 44, 43);
     font-weight: 500;
     font-size: 18px;
-    
 }
+.loader {
+            border: 16px solid #f3f3f3; /* Gris clair */
+            border-top: 16px solid #3498db; /* Bleu */
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 2s linear infinite; /* Animation de rotation */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -40px; /* La moitié de la hauteur */
+            margin-left: -40px; /* La moitié de la largeur */
+            z-index: 999; /* Assure que l'indicateur est au-dessus du contenu */
+            display: none;
+            animation: loaderAnimation 12s ease-out;
+        }
+        .submit-btn:active + .loader {
+            display: block;
+            animation: loaderAnimation 12s ease-out;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        } 
 
     </style>
 </head>
@@ -168,7 +191,7 @@ input{
             <button class="algorithm-btn">Algorithmes</button>
         </div>
     </header>
-    
+
     <div class="container"> <!-- création d'un cadre -->
         <div class="content">
     <h1>Visualisation des algorithmes de tri</h1>
@@ -197,6 +220,7 @@ input{
         <br>
     
         <button type="submit" class="submit-btn" style="background-color: #3a4daa;">Run Algorithme</button>
+        <div class="loader" id="loader"></div>
     </form>
         </div>
     <footer> <!-- Pied de page -->
