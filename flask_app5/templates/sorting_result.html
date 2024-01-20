@@ -13,11 +13,12 @@ body {
     padding: 0;
     display: flex;
     min-height: 100vh;
-    background-color: #e7e7e7;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh; /* 100% de la hauteur de la fenêtre */
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    background-color: #e7e7e7;
 }
 .logo {
     width: 20px; /* Adjust the width as needed */
@@ -37,7 +38,7 @@ h1 {
 p1{
     font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     text-align: center;
-    margin: 150px;
+    margin: ;
     font-size: 20px;
 }
 p {
@@ -65,7 +66,8 @@ button:hover {
 
 header {
     background-color: #1c2838;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
 }
 header:hover{
     background-color: #4c2570;
@@ -180,7 +182,11 @@ footer {
             que l'on pourrait attendre en tant qu'humain plutôt que dans l'ordre lexicographique traditionnel utilisé par les ordinateurs.</p>   
         <br>
         {% elif algorithm == 'trirapide' %}
-        <p style="color: red;"> Problème avec ce tri algorithmique (les chiffres (une unité ex: 0,1,2,3 etc) ne sont pas bien trié)</p>
+        <p style="color: red;"> Problème avec ce tri algorithmique (les chiffres (une unité ex: 0,1,2,3 etc) ne sont pas bien trié)
+            <p style="color: rgb(0, 0, 0);">Le tri rapide, un algorithme de tri efficace, divise un tableau en sous-ensembles, les trie de manière récursive en utilisant un pivot, 
+            et combine les résultats 
+            pour obtenir un tableau trié. Connu pour sa rapidité, il est largement utilisé dans des contextes où les performances sont cruciales.
+        </p></p>
     {% else %}
         <p>No description available for this algorithm.</p>
     {% endif %}
